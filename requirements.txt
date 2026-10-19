@@ -1,0 +1,5 @@
+snowflake-connector-python[secure-local-storage]
+snowflake-snowpark-python==1.44.0
+
+sqlmesh[snowflake,slack]==0.236.0
+PyGithub
