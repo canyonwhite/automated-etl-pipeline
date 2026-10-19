@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+src/retail_data_platform.egg-info/PKG-INFO
+src/retail_data_platform.egg-info/SOURCES.txt
+src/retail_data_platform.egg-info/dependency_links.txt
+src/retail_data_platform.egg-info/requires.txt
+src/retail_data_platform.egg-info/top_level.txt
+src/retail_pipeline/init.py
+src/retail_pipeline/validation.py
+tests/test_validation.py
