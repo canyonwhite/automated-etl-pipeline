@@ -7,7 +7,9 @@ name = "retail-data-platform"
 version = "0.1.0"
 description = "An end-to-end e-commerce ELT platform"
 requires-python = ">=3.12,<3.13"
-dependencies = []
+dependencies = [
+    "pandas>=2.2,<3"
+]
 
 [project.optional-dependencies]
 dev = [

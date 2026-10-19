@@ -1,3 +1,4 @@
+pandas<3,>=2.2
 
 [dev]
 pytest<10,>=8
