@@ -124,12 +124,32 @@ def profile_relationships() -> None:
             print(f"Rows with missing foreign keys: {int(orphan_mask.sum())}")
             print(f"Distinct missing foreign keys: {len(orphan_keys)}")
 
+def profile_data_grain(dataset_name: str, grain: list) -> None:
+    config = DATASETS[dataset_name]
+    file_path = DATA_DIR / config["file"]
+    df = pd.read_csv(file_path, low_memory=False)
 
+    print(f"\n{'=' * 50}")
+    print(f"DATA GRAIN ANALYSIS FOR {dataset_name.upper()}")
+    print(f"{'=' * 50}")
+
+    no_duplicates = df.drop_duplicates(subset=grain)
+    grain_count = len(no_duplicates)
+
+    if not no_duplicates.empty:
+        print(f"The number of unique rows for {dataset_name}, with grain {grain} is:")
+        print(grain_count)
+    else:
+        print(f"No duplicate rows found for grain {grain}.")
 
 def main():
     for name, config in DATASETS.items():
         profile_dataset(name, config)
     profile_relationships()
+    profile_data_grain("orders", ["order_id"])
+    profile_data_grain("customers", ["customer_id"])
+    profile_data_grain("order_items", ["order_id", "order_item_id"])
+    profile_data_grain("payments", ["order_id", "payment_sequential"])
 
 if __name__ == "__main__":
     main()
