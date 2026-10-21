@@ -1,0 +1,23 @@
+gateways:
+  snowflake:
+    connection:
+      type: snowflake
+      concurrent_tasks: 4
+      account: {{ env_var('SNOWFLAKE_ACCOUNT') }}
+      user: {{ env_var('SNOWFLAKE_USER') }}
+      private_key_path: {{ env_var('SNOWFLAKE_KEY_FOLDER') }}
+      private_key_passphrase: {{ env_var('SNOWFLAKE_KEY_PASSPHRASE') }}
+      warehouse: RETAIL_DEV_WH
+      database: RETAIL_DB
+      role: SYSADMIN
+
+    state_connection:
+      type: duckdb
+      database: sqlmesh_state.db
+      concurrent_tasks: 4
+
+default_gateway: snowflake
+
+model_defaults:
+  dialect: snowflake
+  start: 2016-01-01

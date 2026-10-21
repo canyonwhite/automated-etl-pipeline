@@ -1,5 +1,5 @@
 MODEL (
-    name RETAIL_DB.STAGING.STG_ORDERS,
+    name bronze.stg_orders_olist,
     kind VIEW,
     description "one row per order"
 );
