@@ -14,7 +14,8 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
     "pytest>=8,<10",
-    "ruff>=0.9,<1"
+    "ruff>=0.9,<1",
+    "sqlmesh[snowflake]"
 ]
 
 [tool.setuptools.packages.find]

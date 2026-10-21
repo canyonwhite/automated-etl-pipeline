@@ -10,3 +10,7 @@
 | Customers | 99441 | 0 | 0 | 0 |
 | Products | 32951 | 0 | 0 | NA |
 | Sellers | 3095 | 0 | 0 | NA |
+
+# Findings
+
+The data quality appears to be extremely high. We found zero duplicate keys, null keys, or orphaned keys within any of our source datasets. 

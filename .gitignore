@@ -22,3 +22,28 @@ logs/
 # Operating system files
 .DS_Store
 Thumbs.db
+
+# SQLMesh local state and generated artifacts
+*.db
+*.db.wal
+*.db-shm
+*.db-journal
+**/.cache/
+sqlmesh/.env
+sqlmesh/*.yaml
+
+# Snowflake RSA authentication keys
+rsa_key.p8
+rsa_key.pub
+
+# Other private key files
+*.p8
+*.pem
+*.key
+
+# Docker yaml
+docker-compose.yaml
+docker-compose.yml
+
+# Airflow config
+config/airflow.cfg

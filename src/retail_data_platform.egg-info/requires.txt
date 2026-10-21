@@ -3,3 +3,4 @@ pandas<3,>=2.2
 [dev]
 pytest<10,>=8
 ruff<1,>=0.9
+sqlmesh[snowflake]

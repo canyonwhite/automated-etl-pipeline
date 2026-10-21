@@ -7,3 +7,4 @@ Requires-Dist: pandas<3,>=2.2
 Provides-Extra: dev
 Requires-Dist: pytest<10,>=8; extra == "dev"
 Requires-Dist: ruff<1,>=0.9; extra == "dev"
+Requires-Dist: sqlmesh[snowflake]; extra == "dev"
