@@ -31,6 +31,6 @@ def test_unexpected_column():
         "order_purchase_timestamp",
         "unexpected_column"
     ]
-
+    
     with pytest.raises(ValueError, match="Unexpected column provided"):
         validate_order_columns(columns, False)

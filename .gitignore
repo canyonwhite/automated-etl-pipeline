@@ -47,3 +47,6 @@ docker-compose.yml
 
 # Airflow config
 config/airflow.cfg
+
+# Locally generated ingestion manifests
+data/manifests/
