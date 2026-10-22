@@ -99,12 +99,12 @@ The project will follow a modern ELT architecture
 ```mermaid
 flowchart TD
     A["External REST API<br/>(Data Source)"]
-    B["Python Extraction Script<br/>(Extract)"]
-    C["PostgreSQL Raw Tables<br/>(Load)"]
-    D["SQL / dbt Transformations<br/>(Transform)"]
-    E["PostgreSQL Analytics Tables<br/>(Data Warehouse)"]
+    B["Python Extraction Script to AWS S3<br/>(Extract)"]
+    C["Snowflake Raw Tables<br/>(Load)"]
+    D["SQLMesh Transformations<br/>(Transform)"]
+    E["Snowflake Analytics Tables<br/>(Data Warehouse)"]
     F["SQL Queries / Dashboard<br/>(Analytics)"]
-    G["Orchestration / Scheduler<br/>(Automation)"]
+    G["Apache Airflow Orchestration / Scheduler<br/>(Automation)"]
 
     A --> B
     B --> C
