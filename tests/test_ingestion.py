@@ -25,6 +25,7 @@ def test_valid_csv(sample_csv):
     spec = DatasetSpec(
         name="orders",
         required_columns=("order_id", "customer_id"),
+        allow_extra_columns=False,
     )
 
     manifest = inspect_csv(sample_csv, spec, "0001")
@@ -42,6 +43,7 @@ def test_missing_column(sample_csv):
             "customer_id",
             "order_status",
         ),
+        allow_extra_columns=False,
     )
 
     with pytest.raises(ValueError, match="Missing"):
@@ -60,6 +62,7 @@ def test_invalid_field_count(tmp_path):
     spec = DatasetSpec(
         name="orders",
         required_columns=("order_id", "customer_id"),
+        allow_extra_columns=False,
     )
 
     with pytest.raises(ValueError, match="field count"):
@@ -70,6 +73,7 @@ def test_repeated_batch(sample_csv, tmp_path):
     spec = DatasetSpec(
         name="orders",
         required_columns=("order_id", "customer_id"),
+        allow_extra_columns=False,
     )
 
     manifest = inspect_csv(sample_csv, spec, "0001")
@@ -98,6 +102,7 @@ def test_missing_rows(sample_csv):
     spec = DatasetSpec(
         name="orders",
         required_columns=("order_id", "customer_id"),
+        allow_extra_columns=False,
     )
 
     with pytest.raises(ValueError, match="No rows"):
@@ -113,6 +118,7 @@ def test_single_row(sample_csv):
     spec = DatasetSpec(
         name="orders",
         required_columns=("order_id", "customer_id"),
+        allow_extra_columns=False,
     )
 
     manifest = inspect_csv(sample_csv, spec, "0001")

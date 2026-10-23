@@ -26,6 +26,7 @@ DATASETS = {
             "order_delivered_customer_date",
             "order_estimated_delivery_date",
         ),
+        allow_extra_columns=False,
     ),
     "payments": DatasetSpec(
         name="payments",
@@ -36,6 +37,7 @@ DATASETS = {
             "payment_installments",
             "payment_value",
         ),
+        allow_extra_columns=False,
     ),
     "order_items": DatasetSpec(
         name="order_items",
@@ -48,6 +50,7 @@ DATASETS = {
             "price",
             "freight_value",
         ),
+        allow_extra_columns=False,
     ),
     "customers": DatasetSpec(
         name="customers",
@@ -58,6 +61,7 @@ DATASETS = {
             "customer_city",
             "customer_state",
         ),
+        allow_extra_columns=False,
     ),
     "products": DatasetSpec(
         name="products",
@@ -72,6 +76,7 @@ DATASETS = {
             "product_height_cm",
             "product_width_cm",
         ),
+        allow_extra_columns=False,
     ),
     "sellers": DatasetSpec(
         name="sellers",
@@ -81,6 +86,7 @@ DATASETS = {
             "seller_city",
             "seller_state",
         ),
+        allow_extra_columns=False,
     ),
 }
 
