@@ -99,8 +99,8 @@ The project will follow a modern ELT architecture
 ```mermaid
 flowchart TD
     A["External REST API<br/>(Data Source)"]
-    B["Python Extraction Script to AWS S3<br/>(Extract)"]
-    C["Snowflake Raw Tables<br/>(Load)"]
+    B["Python Extraction Script<br/>(Extract)"]
+    C["AWS S3 Raw Storage<br/>(Load)"]
     D["SQLMesh Transformations<br/>(Transform)"]
     E["Snowflake Analytics Tables<br/>(Data Warehouse)"]
     F["SQL Queries / Dashboard<br/>(Analytics)"]
@@ -123,11 +123,11 @@ flowchart TD
 |-----------|------------|----------------|
 | Data Source | REST API | Provides source data |
 | Extraction | Python | Retrieves data from the API |
-| Raw Storage | PostgreSQL | Stores extracted data before transformation |
-| Transformation | SQLMesh / dbt | Cleans, validates, and models data |
-| Analytics Storage | PostgreSQL | Stores analytics-ready tables |
+| Raw Storage | AWS S3 | Stores extracted data before transformation |
+| Transformation | SQLMesh | Cleans, validates, and models data |
+| Analytics Storage | Snowflake | Stores analytics-ready tables |
 | Analytics | SQL / Dashboard | Supports querying and visualization |
-| Orchestration | Scheduler / Airflow | Automates pipeline execution |
+| Orchestration | Airflow | Automates pipeline execution |
 
 ### ELT Workflow
 
