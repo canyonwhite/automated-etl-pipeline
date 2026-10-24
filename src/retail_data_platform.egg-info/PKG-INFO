@@ -5,6 +5,8 @@ Summary: An end-to-end e-commerce ELT platform
 Requires-Python: <3.13,>=3.12
 Requires-Dist: pandas<3,>=2.2
 Requires-Dist: boto3<2,>=1.40
+Requires-Dist: snowflake-connector-python
+Requires-Dist: python-dotenv
 Provides-Extra: dev
 Requires-Dist: pytest<10,>=8; extra == "dev"
 Requires-Dist: ruff<1,>=0.9; extra == "dev"

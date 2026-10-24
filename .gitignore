@@ -50,3 +50,6 @@ config/airflow.cfg
 
 # Locally generated ingestion manifests
 data/manifests/
+
+# Build files
+build/
